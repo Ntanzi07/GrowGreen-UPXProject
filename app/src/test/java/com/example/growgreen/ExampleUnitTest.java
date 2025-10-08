@@ -1,4 +1,4 @@
-package com.project.growgreen;
+package com.example.growgreen;
 
 import org.junit.Test;
 

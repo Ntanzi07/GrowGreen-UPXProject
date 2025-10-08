@@ -19,6 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "GrowGreen"
+rootProject.name = "growgreen"
 include(":app")
- 

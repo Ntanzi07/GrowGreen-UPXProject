@@ -1,4 +1,6 @@
 package com.example.growgreen;
 
-public class AboutUsActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class AboutUsActivity extends AppCompatActivity {
 }

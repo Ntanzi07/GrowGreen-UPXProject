@@ -1,30 +1,31 @@
 package com.example.growgreen;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class PlantDetailsActivity extends AppCompatActivity {
 
-    private ImageView imgPlant;
+    private ImageView imgPlant, btnBack;
     private TextView tvTitle, tvPlant, tvDescription, tvSymptoms, tvCauses, tvTreatment, tvPrevention;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_plant_details); // Seu layout XML
+        setContentView(R.layout.activity_plant_details);
 
-        // Inicializar views
         initializeViews();
-
-        // Receber e exibir os dados
+        setupBackButton();
         receiveAndDisplayData();
     }
 
     private void initializeViews() {
         imgPlant = findViewById(R.id.img);
+        btnBack = findViewById(R.id.btnBack);
         tvTitle = findViewById(R.id.tv_title);
         tvPlant = findViewById(R.id.tv_plant);
         tvDescription = findViewById(R.id.tv_description);
@@ -32,6 +33,19 @@ public class PlantDetailsActivity extends AppCompatActivity {
         tvCauses = findViewById(R.id.tv_causes);
         tvTreatment = findViewById(R.id.tv_treatment);
         tvPrevention = findViewById(R.id.tv_prevention);
+    }
+
+    private void setupBackButton() {
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Volta para a MainActivity
+                Intent intent = new Intent(PlantDetailsActivity.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     private void receiveAndDisplayData() {
@@ -67,32 +81,13 @@ public class PlantDetailsActivity extends AppCompatActivity {
         }
     }
 
-    private String formatWithBullets(String text) {
-        if (text == null || text.isEmpty()) {
-            return "Informação não disponível";
-        }
-
-        // Se já tem bullets, mantém como está
-        if (text.contains("•") || text.contains("-")) {
-            return text;
-        }
-
-        // Se não tem bullets, adiciona
-        // Assume que cada linha é separada por \n
-        String[] lines = text.split("\n");
-        StringBuilder formatted = new StringBuilder();
-
-        for (String line : lines) {
-            if (!line.trim().isEmpty()) {
-                formatted.append("• ").append(line.trim()).append("\n");
-            }
-        }
-
-        return formatted.toString().trim();
+    // Também pode usar o botão físico voltar
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        startActivity(intent);
+        finish();
     }
-
-    private String getSafeText(String text, String defaultText) {
-        return (text != null && !text.isEmpty()) ? text : defaultText;
-    }
-
 }

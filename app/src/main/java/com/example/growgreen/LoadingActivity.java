@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
@@ -116,14 +115,12 @@ public class LoadingActivity extends AppCompatActivity {
                         }, 1500);
 
                     } else {
-                        Log.e("API", "Erro na resposta: " + response.code());
                         handleError("Erro ao analisar imagem. Código: " + response.code());
                     }
                 }
 
                 @Override
                 public void onFailure(Call<ApiResponse> call, Throwable t) {
-                    Log.e("API", "Falha na requisição: ", t);
                     handleError("Falha na conexão: " + t.getMessage());
                 }
             });
@@ -146,12 +143,6 @@ public class LoadingActivity extends AppCompatActivity {
         intent.putExtra("causes", apiResponse.getCauses()); // String direto
         intent.putExtra("treatment", apiResponse.getTreatmentFormatted()); // Lista formatada
         intent.putExtra("prevention", apiResponse.getPreventionFormatted()); // Lista formatada
-
-        // Log para debug
-        Log.d("API_RESPONSE", "Planta: " + apiResponse.getPlant());
-        Log.d("API_RESPONSE", "Doença: " + apiResponse.getDisease());
-        Log.d("API_RESPONSE", "Sintomas: " + apiResponse.getSymptoms());
-        Log.d("API_RESPONSE", "Causas: " + apiResponse.getCauses());
 
         startActivity(intent);
         finish();

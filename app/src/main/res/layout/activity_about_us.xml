@@ -13,6 +13,88 @@
             android:id="@+id/bottomMenu"
             layout="@layout/layout_bottom_menu" />
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/bottomMenu"
+            android:fillViewport="true"
+            android:paddingBottom="10dp"> <!-- Padding extra para segurança -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="40dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="250dp"
+                    android:layout_height="130dp"
+                    android:contentDescription="Ícone planta"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/logo" />
+
+                <!-- Titulo -->
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/poppins"
+                    android:gravity="center"
+                    android:text="GrowGreen"
+                    android:textColor="#6BBE4B"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <!-- Sobre -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:text="Sobre a GrowGreen"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:fontFamily="@font/poppins"
+                    android:lineSpacingExtra="4dp"
+                    android:text="Cuidar das plantas não precisa ser complicado. Nosso app foi criado para ajudar amantes da natureza, jardineiros e produtores a entenderem o que está acontecendo com suas plantas de forma simples e inteligente. Usamos tecnologia de reconhecimento de imagem para identificar doenças, pragas e deficiências em segundos, assim, você pode manter suas plantas sempre saudáveis e bonitas."
+                    android:textColor="#777777"
+                    android:textSize="14sp" />
+
+                <!-- Como usar -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:text="Como Usar"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_symptoms"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:fontFamily="@font/poppins"
+                    android:lineSpacingExtra="4dp"
+                    android:text="1. Tire ou envie uma foto da folha, caule ou parte afetada da planta.
+\nAguarde a análise — nossa inteligência artificial detecta possíveis doenças em poucos segundos.
+\nReceba o diagnóstico com informações sobre a causa, sintomas e sugestões de tratamento.
+\nAcompanhe suas plantas e veja a evolução dos cuidados ao longo do tempo."
+                    android:textColor="#777777"
+                    android:textSize="14sp" />
+
+                </LinearLayout>
+        </ScrollView>
 
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

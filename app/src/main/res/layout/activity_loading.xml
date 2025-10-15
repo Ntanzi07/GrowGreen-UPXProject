@@ -4,13 +4,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:padding="40dp">
+    android:padding="40dp"
+    android:background="@color/white">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:src="@drawable/logo"
-        android:contentDescription="Ícone planta" />
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        android:contentDescription="Ícone planta"
+        android:scaleType="centerCrop"
+        android:src="@drawable/logo" />
 
     <TextView
         android:id="@+id/loadingText"
@@ -18,7 +20,7 @@
         android:layout_height="wrap_content"
         android:text="Carregando..."
         android:textSize="16sp"
-        android:layout_marginTop="-20dp" />
+        android:layout_marginTop="0dp" />
 
     <ProgressBar
         android:id="@+id/progressBar"

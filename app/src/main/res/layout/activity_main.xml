@@ -29,7 +29,8 @@
             <!-- Ícone da planta -->
             <ImageView
                 android:layout_width="250dp"
-                android:layout_height="200dp"
+                android:layout_height="140dp"
+                android:scaleType="centerCrop"
                 android:src="@drawable/logo"
                 android:contentDescription="Ícone planta"
                 android:layout_marginBottom="20dp" />

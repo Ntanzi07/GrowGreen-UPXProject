@@ -17,7 +17,7 @@
 
     <ImageView
         android:id="@+id/btnHome"
-        android:layout_width="65dp"
+        android:layout_width="40dp"
         android:layout_height="60dp"
         android:clickable="true"
         android:focusable="true"

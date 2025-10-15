@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
+import androidx.core.content.ContextCompat;
 
 import com.example.growgreen.AboutUsActivity;
 import com.example.growgreen.MainActivity;
@@ -42,6 +43,9 @@ public class BottomMenuHelper {
                 }
             });
         }
+
+        // Atualiza as cores baseado na tela atual
+        updateMenuColors(activity);
     }
 
     public static void updateMenuColors(Activity activity) {
@@ -49,18 +53,22 @@ public class BottomMenuHelper {
         ImageView btnInfo = activity.findViewById(R.id.btnInfo);
 
         if (btnHome != null && btnInfo != null) {
+            // Cores
+            int selectedColor = 0xFF6BBE4B;  // Verde #6BBE4B
+            int unselectedColor = 0xFFC0C0C0; // Cinza #C0C0C0
+
             if (activity instanceof MainActivity) {
-                // Na MainActivity: home verde, info cinza
-                btnHome.setColorFilter(activity.getResources().getColor(android.R.color.holo_green_dark));
-                btnInfo.setColorFilter(activity.getResources().getColor(android.R.color.darker_gray));
+                // Na MainActivity: home verde (selecionado), info cinza
+                btnHome.setColorFilter(selectedColor);
+                btnInfo.setColorFilter(unselectedColor);
             } else if (activity instanceof AboutUsActivity) {
-                // Na AboutUsActivity: home cinza, info verde
-                btnHome.setColorFilter(activity.getResources().getColor(android.R.color.darker_gray));
-                btnInfo.setColorFilter(activity.getResources().getColor(android.R.color.holo_green_dark));
+                // Na AboutUsActivity: home cinza, info verde (selecionado)
+                btnHome.setColorFilter(unselectedColor);
+                btnInfo.setColorFilter(selectedColor);
             } else {
-                // Em outras activities: home verde, info cinza
-                btnHome.setColorFilter(activity.getResources().getColor(android.R.color.holo_green_dark));
-                btnInfo.setColorFilter(activity.getResources().getColor(android.R.color.darker_gray));
+                // Em outras activities (PlantDetails, Loading): home verde, info cinza
+                btnHome.setColorFilter(selectedColor);
+                btnInfo.setColorFilter(unselectedColor);
             }
         }
     }

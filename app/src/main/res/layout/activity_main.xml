@@ -12,43 +12,9 @@
         android:background="@color/white">
 
         <!-- Menu inferior PRIMEIRO (para usar layout_above) -->
-        <LinearLayout
+        <include
             android:id="@+id/bottomMenu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:background="@color/white"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:paddingVertical="10dp">
-
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_weight="0.3" />
-
-            <ImageView
-                android:layout_width="65dp"
-                android:layout_height="60dp"
-                android:src="@drawable/home"
-                app:tint="#6BBE4B" />
-
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_weight="1" />
-
-            <ImageView
-                android:layout_width="35dp"
-                android:layout_height="50dp"
-                android:src="@drawable/info"
-                app:tint="#C0C0C0" />
-
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_weight="0.3" />
-        </LinearLayout>
+            layout="@layout/layout_bottom_menu" />
 
         <!-- Área branca central - AGORA ACIMA DO MENU -->
         <LinearLayout

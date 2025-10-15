@@ -8,6 +8,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.growgreen.helpers.BottomMenuHelper;
+
 public class PlantDetailsActivity extends AppCompatActivity {
 
     private ImageView imgPlant, btnBack;
@@ -19,13 +21,17 @@ public class PlantDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_plant_details);
 
         initializeViews();
+
         setupBackButton();
+
+        BottomMenuHelper.setupBottomMenu(this);
+        BottomMenuHelper.updateMenuColors(this);
+
         receiveAndDisplayData();
     }
 
     private void initializeViews() {
         imgPlant = findViewById(R.id.img);
-        btnBack = findViewById(R.id.btnBack);
         tvTitle = findViewById(R.id.tv_title);
         tvPlant = findViewById(R.id.tv_plant);
         tvDescription = findViewById(R.id.tv_description);
@@ -36,6 +42,8 @@ public class PlantDetailsActivity extends AppCompatActivity {
     }
 
     private void setupBackButton() {
+        btnBack = findViewById(R.id.btnBack);
+
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

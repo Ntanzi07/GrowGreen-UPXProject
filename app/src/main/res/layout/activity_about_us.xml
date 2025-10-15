@@ -3,4 +3,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <!-- LinearLayout com ícones PRIMEIRO (para usar layout_above) -->
+        <include
+            android:id="@+id/bottomMenu"
+            layout="@layout/layout_bottom_menu" />
+
+
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,6 +23,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- LoadingActivity -->
+        <activity
+            android:name=".LoadingActivity"
+            android:exported="false" />
+
+        <!-- PlantDetailsActivity -->
+        <activity
+            android:name=".PlantDetailsActivity"
+            android:exported="false" />
+
+        <!-- AboutUsActivity -->
+        <activity
+            android:name=".AboutUsActivity"
+            android:exported="false" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="auto"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <!-- LinearLayout com ícones PRIMEIRO (para usar layout_above) -->
+        <include
+            android:id="@+id/bottomMenu"
+            layout="@layout/layout_bottom_menu" />
+
+        <!-- ScrollView ajustado para ficar ACIMA do menu -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/bottomMenu"
+            android:fillViewport="true"
+            android:paddingBottom="10dp"> <!-- Padding extra para segurança -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <!-- Ícone da planta -->
+                <ImageView
+                    android:id="@+id/img"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:contentDescription="@string/foto_planta"
+                    android:scaleType="centerCrop" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="25dp">
+
+                    <!-- Planta -->
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="center"
+                        android:text="Titulo"
+                        android:textColor="#000000"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_plant"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="24dp"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="center"
+                        android:lineSpacingExtra="4dp"
+                        android:text="planta"
+                        android:textColor="#777777"
+                        android:textSize="14sp" />
+
+                    <!-- Descrição -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="Descrição"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="24dp"
+                        android:fontFamily="@font/poppins"
+                        android:lineSpacingExtra="4dp"
+                        android:text="descrição"
+                        android:textColor="#777777"
+                        android:textSize="14sp" />
+
+                    <!-- Sintomas -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="Sintomas"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_symptoms"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="24dp"
+                        android:fontFamily="@font/poppins"
+                        android:lineSpacingExtra="4dp"
+                        android:text="sintomas"
+                        android:textColor="#777777"
+                        android:textSize="14sp" />
+
+                    <!-- Causas -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="Causas"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_causes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="24dp"
+                        android:fontFamily="@font/poppins"
+                        android:lineSpacingExtra="4dp"
+                        android:text="causas"
+                        android:textColor="#777777"
+                        android:textSize="14sp" />
+
+                    <!-- tratamento -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="Tratamento"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_treatment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="24dp"
+                        android:fontFamily="@font/poppins"
+                        android:lineSpacingExtra="4dp"
+                        android:text="tratamento"
+                        android:textColor="#777777"
+                        android:textSize="14sp" />
+
+                    <!-- prevenção -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="Prevenção"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_prevention"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="24dp"
+                        android:fontFamily="@font/poppins"
+                        android:lineSpacingExtra="4dp"
+                        android:text="prevenção"
+                        android:textColor="#777777"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- Seta SOBREPOSTA - por cima de tudo -->
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/bg_circle_white"
+            android:clickable="true"
+            android:focusable="true"
+            android:elevation="0dp"
+            android:padding="12dp"
+            android:src="@drawable/arrow_left"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="#6BBE4B" />
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
